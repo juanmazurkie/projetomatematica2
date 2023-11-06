@@ -53,3 +53,16 @@ function calcularAreaCone() {
     const area = Math.PI * raio * (raio + geratriz);
     document.getElementById("coneResultado").textContent = `Área do Cone: ${area}`;
 }
+function calcularCilindro() {
+    const raio = parseFloat(document.getElementById("raio").value);
+    const altura = parseFloat(document.getElementById("altura").value);
+
+    if (!isNaN(raio) && !isNaN(altura)) {
+      const volume = Math.PI * Math.pow(raio, 2) * altura;
+      const area = 2 * Math.PI * raio * (raio + altura);
+
+      document.getElementById("resultado").innerHTML = `O volume do cilindro é: ${volume.toFixed(2)} cm³<br>A área de superfície do cilindro é: ${area.toFixed(2)} cm²`;
+    } else {
+      document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos para raio e altura.";
+    }
+  }
